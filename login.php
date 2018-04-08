@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
     
     $db = $database->openConnection();
     
-    $sql = "select * from tbl_registered_users where email = '$email' and password= '$password'";
+    $sql = "select * from tbl_registered_users where email = '$email' and password= '$password' and active = '1'";
     $user = $db->query($sql);
     $result = $user->fetchAll(PDO::FETCH_ASSOC);
     
